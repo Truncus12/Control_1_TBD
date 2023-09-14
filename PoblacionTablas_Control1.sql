@@ -1,0 +1,194 @@
+--POBLAR COMUNAS
+
+INSERT INTO Comuna (Nombre, Ubicacion)
+VALUES
+    ('Santiago', 'Región Metropolitana'),
+    ('Providencia', 'Región Metropolitana'),
+    ('Las Condes', 'Región Metropolitana'),
+    ('La Serena', 'Coquimbo'),
+    ('Valparaíso', 'Valparaíso'),
+    ('Viña del Mar', 'Valparaíso'),
+    ('Concepción', 'Biobío'),
+    ('Talcahuano', 'Biobío'),
+    ('Arica', 'Arica y Parinacota'),
+    ('Iquique', 'Tarapacá'),
+    ('Antofagasta', 'Antofagasta'),
+    ('La Calera', 'Valparaíso'),
+    ('Punta Arenas', 'Magallanes y Antártica'),
+    ('Rancagua', 'O Higgins'),
+    ('Copiapó', 'Atacama'),
+    ('Osorno', 'Los Lagos'),
+    ('Temuco', 'la Araucanía'),
+    ('Valdivia', 'Los Ríos'),
+    ('Curicó', 'Maule'),
+    ('Los Ángeles', 'Biobío'),
+    ('Puerto Montt', 'Los Lagos'),
+    ('Calama', 'Antofagasta'),
+    ('Chillán', 'Biobío'),
+    ('San Antonio', 'Valparaíso'),
+    ('Coquimbo', 'Coquimbo'),
+    ('Talca', 'Maule'),
+    ('Iquique', 'Tarapacá'),
+    ('Quillota', 'Valparaíso');
+
+
+
+--POBLAR Administrador
+
+INSERT INTO Administrador (Nombre) VALUES
+    ('Aitor Tilla'),
+    ('Alba Sura'),
+    ('Alex Cremento'),
+    ('Aquiles Bailo'),
+    ('Andrés Trozado'),
+    ('Armando Bronca Segura'),
+    ('Dolores Delano'),
+    ('Elba Surero'),
+    ('Elton Tito'),
+    ('Ema Amado Bustos'),
+    ('Helen Chufe'),
+    ('Inés Tornudo'),
+    ('Jazmín Decisa'),
+    ('Josefa Nática'),
+    ('Juanjo Sefina'),
+    ('Lola Mento'),
+    ('Matías Queroso'),
+    ('Rubén D. Moniado'),
+    ('Vicente Levidente'),
+    ('Zacarías Flores Del Campo');
+
+--POBLAR Edificios
+INSERT INTO Edificio (Dirección, ID_Comuna, ID_Administrador) VALUES
+    ('Calle Moneda 123', 1, 1),
+    ('Franklin', 1, 2),
+    ('Calle Agustinas 789', 1, 3),
+    ('Avenida Alameda 1011', 1, 4),
+    ('Calle Amunátegui 1314', 1, 5);
+
+
+
+
+--POBLAR Gasto_Edificio
+
+INSERT INTO Gasto_Edificio (Monto) VALUES
+(1250000),
+(1670000),
+(1980000),
+(1120000),
+(1365000),
+(1798000),
+(1542000),
+(1873000),
+(1137000),
+(1458000),
+(1995000),
+(1576000),
+(1894000),
+(1229000),
+(1653000),
+(1347000),
+(1782000),
+(1436000),
+(1957000),
+(1184000),
+(1618000),
+(1991000),
+(1312000),
+(1736000),
+(1863000),
+(1067000),
+(1549000),
+(1191000),
+(1935000),
+(1710000);
+
+
+--POBLAR Pago_Gasto_edificio
+
+INSERT INTO Pago_Gasto_Edificio (Estado, ID_Edificio, ID_Gasto_Edificio) VALUES
+(true, 1, 1),
+(false, 1, 2),
+(true, 1, 3),
+(false, 1, 4),
+(true, 1, 5),
+(false, 1, 6),
+(true, 2, 7),
+(false, 2, 8),
+(true, 2, 9),
+(false, 2, 10),
+(true, 2, 11),
+(false, 2, 12),
+(true, 3, 13),
+(false, 3, 14),
+(true, 3, 15),
+(false, 3, 16),
+(true, 3, 17),
+(false, 3, 18),
+(true, 4, 19),
+(false, 4, 20),
+(true, 4, 21),
+(false, 4, 22),
+(true, 4, 23),
+(false, 4, 24),
+(true, 5, 25),
+(false, 5, 26),
+(true, 5, 27),
+(false, 5, 28),
+(true, 5, 29),
+(false, 5, 30);
+
+
+--POBLAR Gasto_Comun
+INSERT INTO Gasto_Común (Mantencion, Servicios) VALUES
+    (100000, 0),
+    (100000, 50000),
+    (100000, 100000),
+    (150000, 0),
+    (150000, 50000),
+    (150000, 100000),
+    (200000, 0),
+    (200000, 50000),
+    (200000, 100000),
+
+
+--POBLAR Tipo_Depto
+
+INSERT INTO Tipo_Depto (Nombre, Tamano, Banos, Habitaciones, Capacidad, ID_Gasto_Comun) VALUES
+('Individual', 45, 1, 1, 2, 1),
+('Pequeño', 55, 1, 1, 2, 1),
+('Pequeño B', 65, 1, 1, 2, 4),
+('Mediano', 75, 1, 1, 2, 4),
+('Mediano B', 85, 1, 2, 2, 5),
+('Mediano C', 95, 2, 2, 4, 5),
+('Grande', 105, 2, 2, 4, 5),
+('Familiar', 125, 2, 2, 4, 7),
+('Suite', 145, 2, 3, 6, 8),
+('Premium', 200, 3, 3, 6, 9);
+
+--POBLAR Depto
+
+INSERT INTO Depto (Piso, Cant_Habitantes, ID_Tipo_Depto, ID_Edificio) VALUES
+(1, 2, 1, 1),
+(1, 2, 2, 1),
+(2, 2, 3, 1),
+(2, 2, 4, 1),
+(3, 4, 6, 1),
+(3, 4, 7, 1),
+(4, 4, 6, 1),
+(4, 4, 8, 1),
+(5, 6, 9, 1),
+(5, 6, 10, 1);
+
+--POBLAR Pago_Gasto_Depto
+
+INSERT INTO Pago_Gasto_Depto (Monto, Fecha_Emision, Fecha_Limite, ID_Depto, ID_Gasto_Comun) VALUES
+(200000, '2023-09-13', '2023-10-13', 1, 1),
+(220000, '2023-09-13', '2023-10-13', 2, 1),
+(240000, '2023-09-13', '2023-10-13', 3, 4),
+(260000, '2023-09-13', '2023-10-13', 4, 4),
+(300000, '2023-09-13', '2023-10-13', 5, 5),
+(320000, '2023-09-13', '2023-10-13', 6, 5),
+(300000, '2023-09-13', '2023-10-13', 7, 5),
+(340000, '2023-09-13', '2023-10-13', 8, 7),
+(360000, '2023-09-13', '2023-10-13', 9, 8),
+(380000, '2023-09-13', '2023-10-13', 10, 9);

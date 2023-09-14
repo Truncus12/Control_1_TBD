@@ -35,11 +35,9 @@ CREATE TABLE Depto(
     Cant_Habitantes INT,
     ID_Tipo_Depto INT,
     ID_Edificio INT,
-    ID_Pago_Gasto_Depto INT,
     PRIMARY KEY (ID_Depto),
     FOREIGN KEY (ID_Tipo_Depto),
-    FOREIGN KEY (ID_Edificio),
-    FOREIGN KEY (ID_Pago_Gasto_Depto)
+    FOREIGN KEY (ID_Edificio)
 );
 
 CREATE TABLE Edificio(
