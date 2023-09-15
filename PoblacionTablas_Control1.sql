@@ -1,4 +1,4 @@
---POBLAR COMUNAS
+--POBLAR Comuna
 
 INSERT INTO Comuna (Nombre, Ubicacion)
 VALUES
@@ -57,8 +57,8 @@ INSERT INTO Administrador (Nombre) VALUES
     ('Vicente Levidente'),
     ('Zacarías Flores Del Campo');
 
---POBLAR Edificios
-INSERT INTO Edificio (Dirección, ID_Comuna, ID_Administrador) VALUES
+--POBLAR Edificio
+INSERT INTO Edificio (Direccion, ID_Comuna, ID_Administrador) VALUES
     ('Calle Moneda 123', 1, 1),
     ('Franklin', 1, 2),
     ('Calle Agustinas 789', 1, 3),
@@ -139,7 +139,7 @@ INSERT INTO Pago_Gasto_Edificio (Estado, ID_Edificio, ID_Gasto_Edificio) VALUES
 
 
 --POBLAR Gasto_Comun
-INSERT INTO Gasto_Común (Mantencion, Servicios) VALUES
+INSERT INTO Gasto_Comun (Mantencion, Servicios) VALUES
     (100000, 0),
     (100000, 50000),
     (100000, 100000),
@@ -148,7 +148,7 @@ INSERT INTO Gasto_Común (Mantencion, Servicios) VALUES
     (150000, 100000),
     (200000, 0),
     (200000, 50000),
-    (200000, 100000),
+    (200000, 100000);
 
 
 --POBLAR Tipo_Depto
@@ -191,4 +191,26 @@ INSERT INTO Pago_Gasto_Depto (Monto, Fecha_Emision, Fecha_Limite, ID_Depto, ID_G
 (300000, '2023-09-13', '2023-10-13', 7, 5),
 (340000, '2023-09-13', '2023-10-13', 8, 7),
 (360000, '2023-09-13', '2023-10-13', 9, 8),
-(380000, '2023-09-13', '2023-10-13', 10, 9);
+(380000, '2023-09-13', '2023-10-13', 10, 9),
+
+(200000, '2023-08-13', '2023-09-13', 1, 1),
+(220000, '2023-08-13', '2023-09-13', 2, 1),
+(240000, '2023-08-13', '2023-09-13', 3, 4),
+(260000, '2023-08-13', '2023-09-13', 4, 4),
+(300000, '2023-08-13', '2023-09-13', 5, 5),
+(320000, '2023-08-13', '2023-09-13', 6, 5),
+(300000, '2023-08-13', '2023-09-13', 7, 5),
+(340000, '2023-08-13', '2023-09-13', 8, 7),
+(360000, '2023-08-13', '2023-09-13', 9, 8),
+(380000, '2023-08-13', '2023-09-13', 10, 9),
+
+(200000, '2023-07-13', '2023-08-13', 1, 1),
+(220000, '2023-07-13', '2023-08-13', 2, 1),
+(240000, '2023-07-13', '2023-08-13', 3, 4),
+(260000, '2023-07-13', '2023-08-13', 4, 4),
+(300000, '2023-07-13', '2023-08-13', 5, 5),
+(320000, '2023-07-13', '2023-08-13', 6, 5),
+(300000, '2023-07-13', '2023-08-13', 7, 5),
+(340000, '2023-07-13', '2023-08-13', 8, 7),
+(360000, '2023-07-13', '2023-08-13', 9, 8),
+(380000, '2023-07-13', '2023-08-13', 10, 9);
