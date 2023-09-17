@@ -2,5 +2,5 @@ SELECT e.ID_Edificio, EXTRACT(MONTH FROM p.Fecha_Emision) AS Mes, SUM(p.Monto) A
 FROM Edificio e
 JOIN Depto d ON e.ID_Edificio = d.ID_Edificio
 JOIN PAGO_GASTO_DEPTO p ON d.ID_depto = p.ID_depto
-GROUP BY e.ID_Edificio, p.Fecha_Emision
-ORDER BY e.ID_Edificio, p.Fecha_Emision
+GROUP BY e.ID_Edificio, EXTRACT(MONTH FROM p.Fecha_Emision)
+ORDER BY e.ID_Edificio, EXTRACT(MONTH FROM p.Fecha_Emision)
