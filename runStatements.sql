@@ -1,17 +1,19 @@
 -- 1
-SELECT ID_depto
-FROM Depto
-WHERE ID_depto NOT IN (SELECT ID_depto 
-                                FROM PAGO_GASTO_DEPTO 
-                                WHERE Fecha_Limite >  CURRENT_DATE - INTERVAL '3 months')
+SELECT e.ID_Edificio AS Edificio, d.ID_depto AS Depto, p.Fecha_Limite, p.Fecha_Pago
+FROM Edificio e
+JOIN Depto d ON e.ID_Edificio = d.ID_Edificio
+JOIN PAGO_GASTO_DEPTO p on d.ID_depto = p.ID_depto
+WHERE p.Fecha_Emision >= (CURRENT_DATE - INTERVAL '3 months') AND (p.Fecha_Pago > p.Fecha_Limite OR p.Fecha_Pago IS NULL)
+GROUP BY e.ID_Edificio, d.ID_depto,  p.Fecha_Limite, p.Fecha_Pago
+ORDER BY e.ID_Edificio, p.Fecha_Limite
 
 -- 2
 SELECT e.ID_Edificio, EXTRACT(MONTH FROM p.Fecha_Emision) AS Mes, SUM(p.Monto) AS Recaudo
 FROM Edificio e
 JOIN Depto d ON e.ID_Edificio = d.ID_Edificio
 JOIN PAGO_GASTO_DEPTO p ON d.ID_depto = p.ID_depto
-GROUP BY e.ID_Edificio, p.Fecha_Emision
-ORDER BY e.ID_Edificio, p.Fecha_Emision
+GROUP BY e.ID_Edificio, EXTRACT(MONTH FROM p.Fecha_Emision)
+ORDER BY e.ID_Edificio, EXTRACT(MONTH FROM p.Fecha_Emision)
 
 -- 3
 SELECT pge.id_edificio, EXTRACT(MONTH FROM pge.fecha_emision), ge.monto
