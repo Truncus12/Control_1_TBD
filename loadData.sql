@@ -195,7 +195,7 @@ INSERT INTO Depto (Piso, Cant_Habitantes, ID_Tipo_Depto, ID_Edificio) VALUES
 (5, 5, 7, 4),
 (5, 4, 7, 4),
 (3, 4, 5, 5),
-(5, 6, 9, 5),
+(5, 6, 9, 5);
 
 --POBLAR Pago_Gasto_Depto
 
