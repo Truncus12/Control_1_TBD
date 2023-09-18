@@ -105,37 +105,37 @@ INSERT INTO Gasto_Edificio (Monto) VALUES
 
 --POBLAR Pago_Gasto_edificio
 
-INSERT INTO Pago_Gasto_Edificio (Estado, ID_Edificio, ID_Gasto_Edificio) VALUES
-(true, 1, 1),
-(false, 1, 2),
-(true, 1, 3),
-(false, 1, 4),
-(true, 1, 5),
-(false, 1, 6),
-(true, 2, 7),
-(false, 2, 8),
-(true, 2, 9),
-(false, 2, 10),
-(true, 2, 11),
-(false, 2, 12),
-(true, 3, 13),
-(false, 3, 14),
-(true, 3, 15),
-(false, 3, 16),
-(true, 3, 17),
-(false, 3, 18),
-(true, 4, 19),
-(false, 4, 20),
-(true, 4, 21),
-(false, 4, 22),
-(true, 4, 23),
-(false, 4, 24),
-(true, 5, 25),
-(false, 5, 26),
-(true, 5, 27),
-(false, 5, 28),
-(true, 5, 29),
-(false, 5, 30);
+INSERT INTO Pago_Gasto_Edificio (Estado, Fecha_Emision, ID_Edificio, ID_Gasto_Edificio) VALUES
+(true, '2023-09-13', 1, 1),
+(false, '2023-09-13', 1, 2),
+(true, '2023-09-13', 1, 3),
+(false, '2023-09-13', 1, 4),
+(true, '2023-10-13',1, 5),
+(false, '2023-11-13',1, 6),
+(true, '2023-09-13',2, 7),
+(false, '2023-09-13',2, 8),
+(true, '2023-09-13',2, 9),
+(false, '2023-10-13',2, 10),
+(true, '2023-10-13',2, 11),
+(false, '2023-11-13',2, 12),
+(true, '2023-09-13',3, 13),
+(false, '2023-09-13',3, 14),
+(true, '2023-10-13',3, 15),
+(false, '2023-10-13',3, 16),
+(true, '2023-11-13',3, 17),
+(false, '2023-11-13',3, 18),
+(true, '2023-09-13',4, 19),
+(false, '2023-09-13',4, 20),
+(true, '2023-10-13',4, 21),
+(false, '2023-10-13',4, 22),
+(true, '2023-11-13',4, 23),
+(false, '2023-12-13',4, 24),
+(true, '2023-09-13',5, 25),
+(false, '2023-09-13',5, 26),
+(true, '2023-10-13',5, 27),
+(false, '2023-10-13',5, 28),
+(true, '2023-11-13',5, 29),
+(false, '2023-11-13',5, 30);
 
 
 --POBLAR Gasto_Comun
@@ -195,7 +195,7 @@ INSERT INTO Depto (Piso, Cant_Habitantes, ID_Tipo_Depto, ID_Edificio) VALUES
 (5, 5, 7, 4),
 (5, 4, 7, 4),
 (3, 4, 5, 5),
-(5, 6, 9, 5),
+(5, 6, 9, 5);
 
 --POBLAR Pago_Gasto_Depto
 

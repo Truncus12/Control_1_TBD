@@ -30,6 +30,7 @@ CREATE TABLE Gasto_Edificio(
 CREATE TABLE Pago_Gasto_Edificio(
     ID_Pago_Gasto_Edificio SERIAL NOT NULL,
     Estado BOOL,
+	Fecha_Emision DATE,
     ID_Edificio INT,
     ID_Gasto_Edificio INT,
     PRIMARY KEY (ID_Pago_Gasto_Edificio),
