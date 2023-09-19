@@ -5,7 +5,7 @@ JOIN Depto d ON e.ID_Edificio = d.ID_Edificio
 JOIN PAGO_GASTO_DEPTO p on d.ID_depto = p.ID_depto
 WHERE p.Fecha_Emision >= (CURRENT_DATE - INTERVAL '3 months') AND (p.Fecha_Pago > p.Fecha_Limite OR p.Fecha_Pago IS NULL)
 GROUP BY e.ID_Edificio, d.ID_depto,  p.Fecha_Limite, p.Fecha_Pago
-ORDER BY e.ID_Edificio, p.Fecha_Limite
+ORDER BY e.ID_Edificio, p.Fecha_Limite;
 
 -- 2
 SELECT e.ID_Edificio, EXTRACT(MONTH FROM p.Fecha_Pago) AS Mes, SUM(g.mantencion + g.servicios) AS Recaudo
@@ -39,7 +39,17 @@ WHERE (gc.mantencion + gc.servicios) = (
 SELECT e.id_edificio, c.nombre, count(d.id_depto)
 FROM comuna c, edificio e, depto d
 WHERE c.id_comuna = e.id_comuna and e.id_edificio = d.id_edificio
-GROUP BY( e.id_edificio, c.nombre)
+GROUP BY( e.id_edificio, c.nombre);
+
+-- 6
+SELECT
+    Administrador.Nombre AS Nombre,
+    COUNT(Edificio.ID_Edificio) AS Cantidad_Edificios
+FROM Administrador
+LEFT JOIN Edificio
+    ON Edificio.ID_Administrador = Administrador.ID_Administrador
+GROUP BY Administrador.ID_Administrador
+ORDER BY Cantidad_Edificios DESC;
 
 -- 7
 SELECT id_depto, id_edificio, piso, cant_habitantes
@@ -47,7 +57,7 @@ FROM depto
 INNER JOIN (SELECT id_edificio, piso, MAX(cant_habitantes) as cant_habitantes
 	FROM depto
 	GROUP BY piso, id_edificio
-	ORDER BY(id_edificio, piso) desc) as tablita USING(id_edificio, piso, cant_habitantes)
+	ORDER BY(id_edificio, piso) desc) as tablita USING(id_edificio, piso, cant_habitantes);
 
 -- 8
 SELECT tipo_depto.id_tipo_depto, edificio.id_edificio, COUNT(depto) AS cantidad_departamentos
@@ -55,7 +65,7 @@ FROM depto
 LEFT JOIN tipo_depto ON depto.id_tipo_depto = tipo_depto.id_tipo_depto
 LEFT JOIN edificio ON depto.id_edificio = edificio.id_edificio
 GROUP BY edificio.id_edificio, tipo_depto.id_tipo_depto
-ORDER BY edificio.id_edificio
+ORDER BY edificio.id_edificio;
 
 -- 9
 SELECT id_edificio
@@ -73,7 +83,7 @@ WHERE id_edificio IN (
 			FROM gasto_edificio
 			)
 		)
-	)
+	);
 
 -- 10
 SELECT
@@ -95,4 +105,4 @@ JOIN (
 ) AS minimo_depto
 	ON minimo_depto.ID_Edificio = Edificio.ID_Edificio
 	AND minimo_depto.Tamano = Tipo_Depto.Tamano
-GROUP BY Edificio.ID_Edificio
+GROUP BY Edificio.ID_Edificio, Tipo_Depto.ID_Tipo_Depto;

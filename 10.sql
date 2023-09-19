@@ -17,4 +17,4 @@ JOIN (
 ) AS minimo_depto
 	ON minimo_depto.ID_Edificio = Edificio.ID_Edificio
 	AND minimo_depto.Tamano = Tipo_Depto.Tamano
-GROUP BY Edificio.ID_Edificio
+GROUP BY Edificio.ID_Edificio, Tipo_Depto.ID_Tipo_Depto
