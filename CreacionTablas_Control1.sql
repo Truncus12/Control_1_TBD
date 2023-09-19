@@ -70,7 +70,6 @@ CREATE TABLE Depto(
 
 CREATE TABLE Pago_Gasto_Depto(
     ID_Pago_Gasto_Depto SERIAL NOT NULL,
-    Monto INT,
     Fecha_Emision DATE,
     Fecha_Limite DATE,
     Fecha_Pago DATE,
