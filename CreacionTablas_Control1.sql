@@ -73,6 +73,7 @@ CREATE TABLE Pago_Gasto_Depto(
     Monto INT,
     Fecha_Emision DATE,
     Fecha_Limite DATE,
+    Fecha_Pago DATE,
     ID_Depto INT,
     ID_Gasto_Comun INT,
     PRIMARY KEY (ID_Pago_Gasto_Depto),
