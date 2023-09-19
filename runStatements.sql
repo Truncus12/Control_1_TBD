@@ -1,4 +1,5 @@
 -- 1
+-- deptos con pagos atrasados o sin pago
 SELECT e.ID_Edificio AS Edificio, d.ID_depto AS Depto, p.Fecha_Limite, p.Fecha_Pago
 FROM Edificio e
 JOIN Depto d ON e.ID_Edificio = d.ID_Edificio

@@ -92,14 +92,3 @@ CREATE TABLE Pago_Gasto_Depto(
     FOREIGN KEY (ID_Depto) REFERENCES Depto(ID_Depto),
     FOREIGN KEY (ID_Gasto_Comun) REFERENCES Gasto_Comun(ID_Gasto_Comun)
 );
-
-
-
-
-
-
-
-
-
-
-
