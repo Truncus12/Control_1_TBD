@@ -1,3 +1,16 @@
+DROP DATABASE IF EXISTS "control1";
+
+CREATE DATABASE "control1"
+    WITH
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+\c control1
+
 CREATE TABLE Comuna(
     ID_Comuna SERIAL NOT NULL,
     Nombre VARCHAR(30),
