@@ -9,7 +9,7 @@ CREATE DATABASE "control1"
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 
-\c control1
+\c control1;
 
 CREATE TABLE Comuna(
     ID_Comuna SERIAL NOT NULL,
